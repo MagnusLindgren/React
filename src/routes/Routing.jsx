@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { HomeView } from "../view/HomeView";
-import { ProjectView } from "../view/ProjectView";
-import { AboutView } from "../view/AboutView";
-import { ContactView } from "../view/ContactView";
+import { HomeView } from "../view/homeView/HomeView";
+import { ProjectView } from "../view/projectView/ProjectView";
+import { AboutView } from "../view/aboutView/AboutView";
+import { ContactView } from "../view/contactView/ContactView";
 import RoutingPath from "./RoutingPath";
 
 export const Routing = ({ children }) => {
