@@ -1,11 +1,11 @@
 const homeView = "/home";
-const projectView = "/project";
+const marvelSearchView = "/search";
 const aboutView = "/about";
 const contactView = "/contact";
 
 export default {
     homeView,
-    projectView,
+    marvelSearchView,
     aboutView,
     contactView
 };
