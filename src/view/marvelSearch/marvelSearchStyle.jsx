@@ -56,8 +56,9 @@ export const HeroCard = styled.div`
         rgba(255, 255, 255, 0.2),
         (rgba(255, 255, 255, 0.5))
     );
+    width: 600px;
     border-radius: 1rem;
-    margin: 2rem 6rem;
+    margin: auto;
     padding: 1rem;
     box-shadow: 6px 6px 20px rgb(0, 0, 0);
     justify-content: space-between; 

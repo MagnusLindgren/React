@@ -1,7 +1,9 @@
+import { MarvelSearchView } from "../marvelSearch/MarvelSearch"
+
 export const HomeView = () => {
     return (
         <div>
-            This is the Homeview
+            <MarvelSearchView></MarvelSearchView>
         </div>
     )
 }
