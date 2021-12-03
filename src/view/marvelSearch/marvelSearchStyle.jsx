@@ -45,3 +45,35 @@ export const Button = styled.button`
     box-shadow: 6px 6px 10px rgb(0, 0, 0);
     cursor: pointer;
 `
+export const HeroCardWrapper = styled.div`
+    height: 80%;
+    overflow-y: scroll;
+`
+export const HeroCard = styled.div`
+    display: flex;
+    background: -moz-linear-gradient(
+        to left top,
+        rgba(255, 255, 255, 0.2),
+        (rgba(255, 255, 255, 0.5))
+    );
+    border-radius: 1rem;
+    margin: 2rem 6rem;
+    padding: 1rem;
+    box-shadow: 6px 6px 20px rgb(0, 0, 0);
+    justify-content: space-between; 
+`
+export const HeroImg = styled.img`
+    width: 12rem;
+    height: 12rem;
+`
+export const HeroCardInfo = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 1em;
+    height: 10rem;
+`
+export const CardInfo = styled.p`
+    color: antiquewhite;
+    font-size: 14px;
+`

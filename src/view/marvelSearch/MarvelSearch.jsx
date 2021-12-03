@@ -5,33 +5,63 @@ import {
     SearchBar, 
     SearchWrapper,
     Input,
-    Button
+    Button,
+    HeroCard,
+    HeroCardInfo,
+    HeroCardWrapper,
+    HeroImg,
+    CardInfo
     } from "./marvelSearchStyle"
 
 export const MarvelSearchView = () => {
-    const [serverResponse, setServerResponse] = useState()
+    const [character, setCharacter] = useState()
+    const [copyright, setCopyright] = useState()
+    const [comics, setComics] = useState([])
     const [search, setSearch] = useState('')
+    const [noData, setData] = useState(true)
 
     const findHero = async () => {
         try {
+            setData(false)
             const response = await SearchMarvelCharacter.SearchMarvelCharacter(search)
-            setServerResponse(response.data.data.results[0])
+            setCharacter(response.data.data.results[0])
+            setCopyright(response.data.attributionText)
+            //setComics(response.data.data.results[0].comics.items)
             console.log(response)
+            //console.log(comics)
         } catch (error) {
+            setData(true)
             console.log(error)
         }
     }
 
-    const displayData = () => {
-        const img = `${serverResponse?.thumbnail.path}/portrait_uncanny.jpg}`
+    const displayCharacter = () => {
+        const img = `${character?.thumbnail?.path}.${character?.thumbnail?.extension}`
         return (
-            <div>
-                <img src={img} alt="" />
-                {serverResponse?.name && <h1>name: {serverResponse?.name}</h1>}
-                {serverResponse?.description && <p> about: {serverResponse?.description}</p>}
-            </div>
+            <HeroCard>
+                <HeroImg src={img} alt="" />                
+                    <HeroCardInfo>
+                        <h2>{character?.name}</h2>
+                        <CardInfo>
+                            {character?.description}
+                        </CardInfo> 
+                        {copyright}                           
+                    </HeroCardInfo>
+            </HeroCard>
         )
     }
+
+    const displayComics = () => {       
+        comics.map((comic) => {
+            return(                
+                <div>
+                    {comic?.title && <h1>{comic?.title}</h1>}
+                </div>                    
+            )
+        }) 
+    }        
+    
+    
 
     useEffect(() => {
         if (search !== '') {
@@ -50,8 +80,7 @@ export const MarvelSearchView = () => {
                     <Button type="button" ><FaSearch /></Button>         
                 </SearchBar>
             </SearchWrapper>
-        
-        {displayData()}
+            {!noData ? displayCharacter() : <h1>No data</h1>}
         </div>
     )
 }
