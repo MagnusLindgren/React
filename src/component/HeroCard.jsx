@@ -5,13 +5,13 @@ export const HeroCard = props => {
     return (
         <div>
             <Card>
-                <HeroImg src={img} alt="" />                
-                    <CardInfoBox>
-                        <h2>{props.character?.name}</h2>
-                        <CardInfo>
-                            {props.character?.description}
-                        </CardInfo>
-                        <Copyright>{props.copyright} </Copyright>                        
+                <HeroImg src={img} alt="Hero Thumbnail" />                
+                <CardInfoBox>
+                    <h2>{props.character?.name}</h2>
+                    <CardInfo>
+                        {!props.character?.description ? <p> No description</p>:props.character?.description}
+                    </CardInfo>
+                    <Copyright>{props.copyright} </Copyright>                        
                     </CardInfoBox>
             </Card>
         </div>
@@ -29,12 +29,11 @@ const Card = styled.div`position: relative;
     border-radius: 1rem;
     margin: auto;
     padding: 1rem;
-    box-shadow: 6px 6px 20px rgb(0, 0, 0);
-    justify-content: space-between; 
+    box-shadow: 6px 6px 20px rgb(0, 0, 0);    
 `
 const HeroImg = styled.img`
-    width: 12rem;
-    height: 12rem;
+    width: 192px;
+    height: 192px;
 `
 const CardInfoBox = styled.div`    
     display: flex;

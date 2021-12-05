@@ -7,32 +7,28 @@ import {
 } from "./marvelSearchStyle"
 
 export const MarvelSearchView = () => {
-    const [character, setCharacter] = useState()
+    const [character, setCharacter] = useState([])
     const [copyright, setCopyright] = useState()
+    const [comics, setComics] = useState([])
 
     const findHero = async (searchterm) => {    
         try {
             const response = await SearchMarvelCharacter.SearchMarvelCharacter(searchterm)
             setCharacter(response.data.data.results[0])
             setCopyright(response.data.attributionText)
-            //setComics(response.data.data.results[0].comics.items)
             console.log(response)
-            //console.log(comics)
+            findComics(response.data.data.results[0].id)
         } catch (error) {
             console.log(error)
         }
     }
 
-    /*const displayComics = () => {       
-        comics.map((comic) => {
-            return(                
-                <div>
-                    {comic?.title && <h1>{comic?.title}</h1>}
-                </div>                    
-            )
-        }) 
-    }     */   
-    
+    const findComics = async (id) => {
+        const response = await SearchMarvelCharacter.SearchMarvelCharacterComics(id)
+        setComics(response.data.data.results[0].comics.items)
+        console.log('Comics fetched')
+    }
+       
     useEffect(() => {
         findHero()
     }, [])
@@ -43,7 +39,14 @@ export const MarvelSearchView = () => {
             {!character ? <NoData>No Data</NoData> :
             <HeroCard   character={character}
                         copyright={copyright}
-            />}       
+            />} 
+            <div>{comics.map((comic) => {
+            return(                
+                <div>
+                    {comic?.name && <p>{comic?.name}</p>}
+                </div>                    
+            )
+        }) }</div>      
         </div>
     )
 }

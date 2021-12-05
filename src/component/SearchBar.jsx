@@ -11,10 +11,6 @@ export const SearchBar = props => {
         props.findHero(searchTerm)
     }
 
-    useEffect(() => {
-        props.findHero()
-    }, [])
-
     return (
         <div>
             <SearchWrapper>
