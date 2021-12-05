@@ -29,6 +29,7 @@ export const GlobalStyles =  createGlobalStyle
   
   h2 {
     text-align: center;
+    text-shadow: 2px 1px #ff0000;
   }
   
   h2,
