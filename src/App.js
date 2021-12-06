@@ -1,4 +1,4 @@
-import { Routing } from "./routes/Routing";
+import { Routing } from "./routes/Routing"
 import { Navigation } from "./component/Navigation"
 import { GlobalStyles } from "./shared/styles/GlobalStyles"
  

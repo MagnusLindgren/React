@@ -1,11 +1,7 @@
-const homeView = "/home";
-const marvelSearchView = "/search";
-const aboutView = "/about";
-const contactView = "/contact";
+const marvelSearchView = "/"
+const heroView = "/hero"
 
 export default {
-    homeView,
     marvelSearchView,
-    aboutView,
-    contactView
-};
+    heroView
+}
