@@ -25,7 +25,8 @@ const Container = styled.div`
     width: 90%;
   
 `
-const Card = styled.div`position: relative;
+const Card = styled.div`
+    position: relative;
     display: flex;
     background: linear-gradient(
         to left top,
@@ -36,11 +37,22 @@ const Card = styled.div`position: relative;
     border-radius: 1rem;
     margin: auto;
     padding: 1rem;
-    box-shadow: 6px 6px 20px rgb(0, 0, 0);    
+    box-shadow: 6px 6px 20px rgb(0, 0, 0);
+    @media (max-width: 768px) {
+        flex-direction: column;
+        min-width: 280px;
+        width: 280px;
+        height: 500px;
+    }
+        
 `
 const HeroImg = styled.img`
     width: 192px;
     height: 192px;
+    @media (max-width: 768px) {
+        width: 240px;
+        height: 240px;
+    }
 `
 const CardInfoBox = styled.div`    
     display: flex;
@@ -48,6 +60,9 @@ const CardInfoBox = styled.div`
     justify-content: space-between;
     margin-left: 1em;
     height: 10rem;
+    @media (max-width: 768px) {
+        
+      }  
 `
 const CardInfo = styled.p`
     color: antiquewhite;
@@ -60,4 +75,7 @@ const Copyright = styled.p`
     position: absolute;
     bottom: 0;
     margin-bottom: 1rem;
+    @media (max-width: 768px) {
+        flex-direction: column;
+      }
 `

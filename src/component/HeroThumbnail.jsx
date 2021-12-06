@@ -37,10 +37,17 @@ const Wrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(4,auto);
     padding: 5px;
-    margin: 5px;  
+    margin: auto;
+    width-max: 1000px;
+    @media (max-width: 992px) {
+        grid-template-columns: repeat(3, auto);
+    }  
     @media (max-width: 768px) {
         grid-template-columns: repeat(2, auto);
-      } 
+    }
+    @media (max-width: 600px) {
+        grid-template-columns: repeat(1, auto);
+    } 
 `
 
 const Card = styled.div`
@@ -53,11 +60,11 @@ const Card = styled.div`
     );
     min-width: 280px;
     width: 280px;
-    min-height: 290px;
-    height: 290px;
+    min-height: 300px;
+    height: 300px;
     border-radius: 1rem;
-    margin: auto;
-    padding: 1rem;
+    padding: 5px;
+    margin: 5px;
     box-shadow: 6px 6px 20px rgb(0, 0, 0);
     cursor: pointer;    
 `

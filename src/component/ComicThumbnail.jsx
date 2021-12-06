@@ -25,9 +25,15 @@ const Wrapper = styled.div`
     grid-template-columns: repeat(4,auto);
     padding: 5px;
     margin: 5px;  
+    @media (max-width: 992px) {
+        grid-template-columns: repeat(3, auto);
+    }  
     @media (max-width: 768px) {
         grid-template-columns: repeat(2, auto);
-      } 
+    }
+    @media (max-width: 600px) {
+        grid-template-columns: repeat(1, auto);
+    }  
 `
 
 const Card = styled.div`
@@ -40,13 +46,13 @@ const Card = styled.div`
     );
     min-width: 280px;
     width: 280px;
-    min-height: 290px;
-    height: 290px;
+    min-height: 310px;
+    height: 300px;
     border-radius: 1rem;
-    margin: auto;
-    padding: 1rem;
+    padding: 5px;
+    margin: 5px;
     box-shadow: 6px 6px 20px rgb(0, 0, 0);
-    cursor: pointer;    
+    cursor: pointer;     
 `
 const ImgContainer = styled.div`
     width: 240px;
