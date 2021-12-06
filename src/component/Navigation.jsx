@@ -3,7 +3,7 @@ import RoutingPath from "../routes/RoutingPath"
 import styled from "styled-components"
 
 export const Navigation = () => {
-    const navigate = useNavigate();
+    const navigate = useNavigate()
 
     return (
         <div>

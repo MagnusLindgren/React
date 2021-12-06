@@ -1,23 +1,30 @@
 import styled from "styled-components"
 
 export const HeroCard = props => {
-    const img = `${props.character?.thumbnail?.path}.${props.character?.thumbnail?.extension}`
-    return (
-        <div>
+const img = `${props.character?.thumbnail?.path}.${props.character?.thumbnail?.extension}`    
+    return (        
+        <Container>                     
             <Card>
                 <HeroImg src={img} alt="Hero Thumbnail" />                
                 <CardInfoBox>
                     <h2>{props.character?.name}</h2>
                     <CardInfo>
-                        {!props.character?.description ? <p> No description</p>:props.character?.description}
+                        {!props.character?.description ? <p> No description</p>: props.character?.description}
                     </CardInfo>
                     <Copyright>{props.copyright} </Copyright>                        
-                    </CardInfoBox>
+                </CardInfoBox>
             </Card>
-        </div>
+        </Container>
     )
 }
 
+const Container = styled.div`
+    padding: 30px;
+    margin: 0 auto;
+    max-width: 48rem;
+    width: 90%;
+  
+`
 const Card = styled.div`position: relative;
     display: flex;
     background: linear-gradient(
@@ -47,10 +54,10 @@ const CardInfo = styled.p`
     font-size: 14px;
 `
 const Copyright = styled.p`
-text-align: center;
-color: #fbca03;
-text-shadow: 1px 1px #ff0000;
-position: absolute;
-bottom: 0;
-margin-bottom: 1rem;
+    text-align: center;
+    color: #fbca03;
+    text-shadow: 1px 1px #ff0000;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 1rem;
 `
